@@ -48,23 +48,23 @@ echo '2.4 создание разделов'
   echo 1;
 
   echo w;
-) | fdisk /dev/sda
+) | fdisk /dev/sdc
 
 echo 'Ваша разметка диска'
 fdisk -l
 
 echo '2.4.2 Форматирование дисков'
-mkfs.ext2  /dev/sda1 -L boot
-mkfs.ext4  /dev/sda2 -L root
-mkswap /dev/sda3 -L swap
-mkfs.ext4  /dev/sda4 -L home
+mkfs.ext2  /dev/sdc1 -L boot
+mkfs.ext4  /dev/sdc2 -L root
+mkswap /dev/sdc3 -L swap
+mkfs.ext4  /dev/sdc4 -L home
 
 echo '2.4.3 Монтирование дисков'
-mount /dev/sda2 /mnt
+mount /dev/sdc2 /mnt
 mkdir /mnt/{boot,home}
-mount /dev/sda1 /mnt/boot
-swapon /dev/sda3
-mount /dev/sda4 /mnt/home
+mount /dev/sdc1 /mnt/boot
+swapon /dev/sdc3
+mount /dev/sdc4 /mnt/home
 
 echo '3.1 Выбор зеркал для загрузки. Ставим зеркало от Яндекс'
 echo "Server = http://mirror.yandex.ru/archlinux/\$repo/os/\$arch" > /etc/pacman.d/mirrorlist
