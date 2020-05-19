@@ -1,6 +1,6 @@
 #!/bin/bash
-read -p "Введите имя компьютера: " hostname
-read -p "Введите имя пользователя: " username
+read -p "Введите имя компьютера: " bogdan-pc
+read -p "Введите имя пользователя: " bogdan
 
 echo 'Прописываем имя компьютера'
 echo $hostname > /etc/hostname
@@ -30,9 +30,6 @@ grub-install /dev/sda
 
 echo 'Обновляем grub.cfg'
 grub-mkconfig -o /boot/grub/grub.cfg
-
-echo 'Ставим программу для Wi-fi'
-pacman -S dialog wpa_supplicant --noconfirm 
 
 echo 'Добавляем пользователя'
 useradd -m -g users -G wheel -s /bin/bash $username

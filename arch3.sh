@@ -18,8 +18,8 @@ sudo pacman -S firefox ufw qt4 f2fs-tools dosfstools ntfs-3g alsa-lib alsa-utils
 echo 'Установить рекомендумые программы?'
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
-  sudo pacman -S obs-studio doublecmd-gtk2 veracrypt vlc freemind filezilla gimp libreoffice libreoffice-fresh-ru kdenlive audacity screenfetch vlc qbittorrent galculator --noconfirm
-  yay -S cherrytree gxneur-devel-git timeshift flameshot-git xflux sublime-text-dev hunspell-ru pamac-aur --noconfirm 
+  sudo pacman -S doublecmd-gtk2 veracrypt vlc freemind filezilla gimp libreoffice libreoffice-fresh-ru screenfetch vlc qbittorrent galculator --noconfirm
+  yay -S cherrytree gxneur-devel-git timeshift flameshot-git xflux sublime-text-dev pamac-aur --noconfirm 
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка программ пропущена.'
 fi
